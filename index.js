@@ -12,18 +12,19 @@ try {
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
 
-  
-    fetch("https://icanhazdadjoke.com/", {
+  //Get a Dad Joke
+  fetch("https://icanhazdadjoke.com/", {
         headers: {
             "Accept": "application/json"
         }
-    })
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data.joke);
-        });
+  })
+    .then(function (response) {
+          return response.json();
+  })
+    .then(function (data) {
+          console.log(data.joke);
+          core.setOutput("dad-joke", data.joke)
+  });
 
 
 } catch (error) {
