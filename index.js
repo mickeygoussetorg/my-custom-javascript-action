@@ -10,6 +10,21 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`);
+
+  
+    fetch("https://icanhazdadjoke.com/", {
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data.joke);
+        });
+
+
 } catch (error) {
   core.setFailed(error.message);
 }
