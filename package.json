@@ -19,6 +19,7 @@
   "homepage": "https://github.com/devopselvis/my-custom-javascript-action#readme",
   "dependencies": {
     "@actions/core": "^1.3.0",
-    "@actions/github": "^5.0.0"
+    "@actions/github": "^5.0.0",
+    "node-fetch": "^2.6.1"
   }
 }
