@@ -4,21 +4,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  hello_world_job:
+  dad_joke_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Tell A Dad Joke
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: Hello world action step
+      - name: Get Dad Joke
         uses: ./ # Uses an action in the root directory
-        id: hello
+        id: dadjoke
         with:
           who-to-greet: 'MickeyG'
       
 
       - name: Output Dad Joke
-        run: echo "${{ steps.hello.outputs.dad-joke }}"
+        run: echo "${{ steps.dadjoke.outputs.dad-joke }}"
