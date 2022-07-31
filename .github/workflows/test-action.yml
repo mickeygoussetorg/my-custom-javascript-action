@@ -12,13 +12,11 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      
-      - name: Get Dad Joke
-        uses: ./ # Uses an action in the root directory
+        
+      - uses: mickeygoussetorg/my-custom-javascript-action@main
         id: dadjoke
         with:
           who-to-greet: 'MickeyG'
-      
 
       - name: Output Dad Joke
         run: echo "${{ steps.dadjoke.outputs.dad-joke }}"
