@@ -25,7 +25,7 @@ try {
           console.log(data.joke);
           core.setOutput("dad-joke", nameToGreet + ", here is your dad joke - " + data.joke)
   });
-
+  core.debug("This message is a debug message and should only be seen when debugging is turned on");
 
 } catch (error) {
   core.setFailed(error.message);
